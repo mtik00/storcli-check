@@ -33,7 +33,7 @@ CV_OK_STATES = ["optimal"]
 VD_OK_STATES = ["optl"]
 PD_OK_STATES = ["onln", "ugood"]
 DEFAULT_FROM = "%s@%s" % (getuser(), socket.gethostname())
-LOGFILE = os.path.join(os.sep, "var", "log", "storcli-check.log")
+LOGFILE = os.path.join(os.sep, "var", "log", "storcli_check.log")
 ################################################################################
 DEBUG_FILE = None  # Set this to a captured output of "storcli64 /call show all"
 CONTROLLER_RE = re.compile("""""")
