@@ -498,11 +498,6 @@ def parse_arguments(parser, logger, args=None):
     (options, args) = parser.parse_args(args)
     logger.debug("options: %s; args: %s", options, args)
 
-    for variable in ["mail_to", "mail_server"]:
-        if not getattr(options, variable, None):
-            logger.error("command-line argument [%s] is required", variable)
-            result = False
-
     if not result:
         parser.print_help()
         sys.exit(-1)
@@ -529,9 +524,6 @@ def init_parser():
         "--cc", dest="mail_cc",
         help="comma-separated list of email addresses to CC the report to",
         default="")
-    parser.add_option(
-        "--debug-print", dest="debug_print", action="store_true",
-        help="skip the email and print the body on the command line")
     return parser
 
 
@@ -549,9 +541,6 @@ if __name__ == '__main__':
     parser = init_parser()
     (options, args) = parse_arguments(parser, logger)
 
-    if options.debug_print:
-        print working_directory
-
     storcli_path = find_storcli(logger)
     s = StorCLI(
         path=storcli_path,
@@ -567,7 +556,7 @@ if __name__ == '__main__':
         zip([working_directory, LOGFILE], log_path)
         subject, body = s.report_as_html()
 
-        if options.debug_print:
+        if not (options.mail_to and options.mail_server):
             print body
         else:
             sendmail(
