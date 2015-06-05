@@ -508,20 +508,20 @@ def parse_arguments(parser, logger, args=None):
 def init_parser():
     parser = OptionParser(version=__version__)
     parser.add_option(
-        "--to", dest="mail_to",
+        "--mailto", dest="mailto",
         help="REQUIRED: comma-separated list of email addresses to send the report to")
     parser.add_option(
-        "--mailserver", dest="mail_server",
+        "--mailserver", dest="mailserver",
         help="REQUIRED: The hostname of the SMTP server to use (e.g. 'mailhost.example.com')")
     parser.add_option(
         "--force", dest="force", action="store_true",
         help="send the report regardless of the result")
     parser.add_option(
-        "--from", dest="mail_from",
+        "--mailfrom", dest="mailfrom",
         help="the 'user' sending the report (defaults to %s)" % DEFAULT_FROM,
         default=DEFAULT_FROM)
     parser.add_option(
-        "--cc", dest="mail_cc",
+        "--mailcc", dest="mailcc",
         help="comma-separated list of email addresses to CC the report to",
         default="")
     return parser
@@ -556,17 +556,17 @@ if __name__ == '__main__':
         zip([working_directory, LOGFILE], log_path)
         subject, body = s.report_as_html()
 
-        if not (options.mail_to and options.mail_server):
+        if not (options.mailto and options.mailserver):
             print body
         else:
             sendmail(
                 subject=subject,
-                to=options.mail_to.split(","),
+                to=options.mailto.split(","),
                 body=body,
-                sender=options.mail_from,
-                mailserver=options.mail_server,
+                sender=options.mailfrom,
+                mailserver=options.mailserver,
                 attachments=[log_path],
-                cc=options.mail_cc.split(","))
+                cc=options.mailcc.split(","))
 
         remove_directory(zipdir)
 

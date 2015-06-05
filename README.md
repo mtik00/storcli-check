@@ -4,15 +4,14 @@ for issues and send a report by email.  It's designed to be self contained and
 easily added to a cron job.
 
 ## Usage
-Before you use the script, you should figure out the following required command-line variables:
- - `--to`: Comma-separated list of emails to send the report to (e.g. "first1.last1@example.com,first2.other2@example.com")
- - `--mailserver`:  The hostname of the SMTP server to use (e.g. "mailhost.example.com")
-
 The following command-line parameters are optional:
+ - `--mailto`: Comma-separated list of emails to send the report to (e.g. `"first1.last1@example.com,first2.other2@example.com"`)
+ - `--mailserver`:  The hostname of the SMTP server to use (e.g. "mailhost.example.com")
  - `--force`: Force the script to send the report even if everything's fine (useful for *weekly status*)
- - `--from`: The user the email will seem to come from.  The default is `<username>@<hostname>`.
- - `--cc`: Comma-separated list of emails to CC the report to (e.g. "first1.last1@example.com,first2.other2@example.com")
- - `--debug-print`: skip the email and print the body on the command line
+ - `--mailfrom`: The user the email will seem to come from.  The default is `<username>@<hostname>`.
+ - `--mailcc`: Comma-separated list of emails to CC the report to (e.g. `"first1.last1@example.com,first2.other2@example.com"`)
+
+ NOTE: If `--mailto` and `--mailserver` are ommited, `--debug-print` is implied.
 
 ## General Information
 The script is a relatively simple parser and reporter for the `storcli /cx show all`
