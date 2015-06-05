@@ -417,10 +417,10 @@ class StorCLI(object):
         super(StorCLI, self).__init__()
         self._path = path
         self._logger = logger
-        self._cached_info = None
+        self._cached_info = {}
         self._parsed = False
         self._working_directory = working_directory or os.getcwd()
-
+        self._count = None
         self._controllers = []
 
         self._load(debug_file)
@@ -440,13 +440,16 @@ class StorCLI(object):
             fh.close()
             self._logger.debug("read [%s]", debug_file)
         else:
-            self._cached_info = self._command("/call show all")
-            temp_file = os.path.join(self._working_directory, "show-all.txt")
-            fh = open(temp_file, "wb")
-            fh.write(self._cached_info)
-            fh.close()
+            for controller_id in xrange(self.controller_count()):
+                self._cached_info[controller_id] = self._command("/c%i show all" % controller_id)
 
-            self._logger.debug("wrote [%s]", temp_file)
+                # Store off the info so it gets zipped up for the report
+                temp_file = os.path.join(self._working_directory, "%02i-show-all.txt" % controller_id)
+                fh = open(temp_file, "wb")
+                fh.write(self._cached_info[controller_id])
+                fh.close()
+
+                self._logger.debug("wrote [%s]", temp_file)
 
         self._parse()
         self._check()
@@ -454,8 +457,8 @@ class StorCLI(object):
     def _parse(self):
         """Parsed the output of the "show all" command into Python types"""
         self._logger.debug("begin parse")
-        for controller_text in re.split("Basics\s:", self._cached_info, re.MULTILINE)[1:]:
-            self._controllers.append(Controller(controller_text, logger=self._logger))
+        for text in self._cached_info.values():
+            self._controllers.append(Controller(text, logger=self._logger))
 
         self._logger.debug("...ok")
 
@@ -472,6 +475,22 @@ class StorCLI(object):
 
             self.result &= result
             self.errors += errors
+
+    def controller_count(self):
+        """Returns the number of controllers found on the system"""
+        # Cache the number of controllers
+        if self._count is not None:
+            return self._count
+
+        result = self._command("show ctrlcount")
+
+        match = re.search("controller count = (\d+)", result, re.IGNORECASE)
+        if match:
+            self._count = int(match.group(1))
+        else:
+            self._count = 0
+
+        return self._count
 
     def ok(self):
         return (self.result, self.errors)
@@ -570,6 +589,7 @@ if __name__ == '__main__':
 
         remove_directory(zipdir)
 
-    remove_directory(working_directory)
+    print working_directory
+    # remove_directory(working_directory)
 
     sys.exit(0)
