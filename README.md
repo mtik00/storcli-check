@@ -21,17 +21,18 @@ virtual drives are "optimal", and all physical drives are "online".
 ## The Report
 The report that is emailed contains some controller information, the list of
 VDs, and the list of PDs.  Any errors found during parsing are also reported.
-You will also find a zip file the contains the output from `show all` and also
-the `MegaSAS.log` file that `storcli` generates.
+You will also find a zip file the contains the output from `show all`, `show events`,
+and also the `MegaSAS.log` file that `storcli` generates (one info and event file
+for each controller).
 
 ## Real World
 I'm using this script to check the state of my LSI controller on a XenServer
 hypervisor.  It was a lot easier than trying to figure out how to pass the
-controller to a guest VM and using MegaRAID Storage Manager, get MSM snmp installed and running on the hypervisor,
-etc.  The requirements for this script are pretty minimal (in my
-opinion), and it is working in my lab.
+controller to a guest VM and using MegaRAID Storage Manager, get MSM snmp installed
+and running on the hypervisor, etc.  The requirements for this script are pretty
+minimal (in my opinion), and it is working in my lab.
 
-I have it periodically running via `crontab`.  It's working so far!  I run the defaults
+I have it periodically running via `cron`.  It's working so far!  I run the defaults
 every 10 minutes (doesn't send logs if everything's ok), and `--force` the report
 once per week:
 
@@ -43,12 +44,75 @@ once per week:
  - SMTP authentication: the SMTP mail server we are running does not require
 authentication if the FROM and TO domains are *local*.  Therefore, I didn't add
 authentication to `sendmail()`.
- - Any *offline* drive will be an error: In my particular case, all of my PDs are part of a volume.  If that's not the case in your configuration, you may want to modify which PD states are *OK* in your configuration.
- - The script was tested with storcli64 version 1.15.05.  Other versions may cause issues with the regular expressions.
-
+ - Any *offline* drive will be an error: In my particular case, all of my PDs
+   are part of a volume.  If that's not the case in your configuration, you may
+   want to modify which PD states are *OK* in your configuration.
+ - The script was tested with storcli64 version 1.15.05.  Other versions may
+   cause issues with the regular expressions.
 
 ## Configuration
 
 If you find that the defaults don't work for you, you should be able to make modifications
 in the *Configuration* section of the source.  I don't use any type of config file.
 The section is near the top of the script.
+
+## Events
+
+An attempt is made to report possible event problems.  The following command is
+run for each controller:
+
+    /cx show events type=sincereboot filter=warning,critical,fatal
+
+If this command returns anything, the script will consider the controller to be
+in an error state.  The script **never** clears the events.  This means that you
+may get spammed depending on how often you: a) run the script; b) how quickly
+you address the issue; c) how soon you clear the events.
+
+You'll also notice that we only report the events that happen since the last
+reboot.  This can help with email spam too.
+
+Here's an example of a sequence of events that will be reported by this script:
+
+    seqNum: 0x0000cf1a
+    Time: Tue Jun  2 18:02:08 2015
+
+    Code: 0x000000fb
+    Class: 2
+    Locale: 0x01
+    Event Description: VD 00/0 is now DEGRADED
+    Event Data:
+    ===========
+    Target Id: 0
+
+
+    seqNum: 0x0000cf1d
+    Time: Tue Jun  2 18:03:11 2015
+
+    Code: 0x000000fc
+    Class: 3
+    Locale: 0x01
+    Event Description: VD 00/0 is now OFFLINE
+    Event Data:
+    ===========
+    Target Id: 0
+
+
+    seqNum: 0x0000cf20
+    Time: Tue Jun  2 18:03:35 2015
+
+    Code: 0x000000fb
+    Class: 2
+    Locale: 0x01
+    Event Description: VD 00/0 is now DEGRADED
+    Event Data:
+    ===========
+    Target Id: 0
+
+In this mock-scenario, we had two drives go offline, which brought the VD
+offline.  We then replaced one of the drives, which moved the VD back into the
+`DEGRADED` state.  Then we replaced the second drive, which moved the VD back
+into the `OPTIMAL` state.  Notice, however, the `OPTIMAL` event was not captured.
+It doesn't show up since that event is not *warning* or above.
+
+It's not a perfect system, but it serves its purpose.  You'll need to clear the
+event log of the offending controller to get the report to stop spamming your email.
