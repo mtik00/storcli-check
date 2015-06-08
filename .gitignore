@@ -2,6 +2,9 @@
 __pycache__/
 *.py[cod]
 
+# Release files
+release/
+
 # C extensions
 *.so
 
