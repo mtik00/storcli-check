@@ -35,7 +35,6 @@ PD_OK_STATES = ["onln", "ugood"]
 DEFAULT_FROM = "%s@%s" % (getuser(), socket.gethostname())
 LOGFILE = os.path.join(os.sep, "var", "log", "storcli_check.log")
 ################################################################################
-DEBUG_FILE = None  # Set this to a captured output of "storcli64 /call show all"
 CONTROLLER_RE = re.compile("""""")
 
 INFO_RE = re.compile("""
@@ -608,8 +607,7 @@ if __name__ == '__main__':
     s = StorCLI(
         path=storcli_path,
         working_directory=working_directory,
-        logger=logger,
-        debug_file=DEBUG_FILE)
+        logger=logger)
     result, errors = s.ok()
 
     if not result or options.force:
