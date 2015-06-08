@@ -406,6 +406,11 @@ class Controller(object):
     def report_as_html(self):
         """Generates an HTML report of the state of the topology."""
 
+        if self.errors:
+            status = '<font color="red">ERROR</font>'
+        else:
+            status = '<font color="green">OK</font>',
+
         body = """
         <h1>Controller Status: %s</h1>
         <pre>
@@ -421,7 +426,7 @@ Firmware Package: %s
         <b>CV Info</b>
         <pre>%s</pre>
         """ % (
-            '<font color="red">ERROR</font>' if self.errors else '<font color="green">OK</font>',
+            status,
             self._basic_data["ctrl_status"], self._basic_data["model"],
             self._basic_data["sasaddress"], self._basic_data["fw_package"],
             self.vd_list,
