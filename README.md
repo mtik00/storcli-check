@@ -61,15 +61,12 @@ The section is near the top of the script.
 An attempt is made to report possible event problems.  The following command is
 run for each controller:
 
-    /cx show events type=sincereboot filter=warning,critical,fatal
+    /cx show events filter=warning,critical,fatal
 
 If this command returns anything, the script will consider the controller to be
 in an error state.  The script **never** clears the events.  This means that you
 may get spammed depending on how often you: a) run the script; b) how quickly
 you address the issue; c) how soon you clear the events.
-
-You'll also notice that we only report the events that happen since the last
-reboot.  This can help with email spam too.
 
 Here's an example of a sequence of events that will be reported by this script:
 

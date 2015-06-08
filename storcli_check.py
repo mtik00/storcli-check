@@ -502,7 +502,7 @@ class StorCLI(object):
             fh.close()
             self._logger.debug("wrote [%s]", temp_file)
 
-            self._cached_events[controller_id] = self._command("/c%i show events type=sincereboot filter=warning,critical,fatal" % controller_id)
+            self._cached_events[controller_id] = self._command("/c%i show events filter=warning,critical,fatal" % controller_id)
 
             # Store off the events so they get zipped up for the report
             temp_file = os.path.join(self._working_directory, "%02i-events.txt" % controller_id)
