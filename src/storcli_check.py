@@ -35,8 +35,6 @@ PD_OK_STATES = ["onln", "ugood"]
 DEFAULT_FROM = "%s@%s" % (getuser(), socket.gethostname())
 LOGFILE = os.path.join(os.sep, "var", "log", "storcli_check.log")
 ################################################################################
-CONTROLLER_RE = re.compile("""""")
-
 INFO_RE = re.compile("""
     ^Model\s=\s(?P<model>.*?)$                              .*
     ^Serial\sNumber\s=\s(?P<serial>.*?)$                    .*
