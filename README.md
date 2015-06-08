@@ -1,7 +1,8 @@
 # storcli-check
-This is a Python 2.4-compatible script that will check your MegaRAID adapter
-for issues and send a report by email.  It's designed to be self contained and
-easily added to a cron job.
+`storcli_check.py` is a Python 2.4-compatible script that will check your
+MegaRAID adapter for issues and send a report by email.  It's designed to be
+self contained and easily added to a cron job.  The only file you need from this
+repo is `storcli_check.py`.
 
 ## Usage
 The following command-line parameters are optional:
