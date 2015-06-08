@@ -241,25 +241,52 @@ def sendmail(subject, to, sender, body, mailserver, body_type="html", attachment
 
 
 class Controller(object):
-    def __init__(self, show_all_data, logger):
+    def __init__(self, show_all_data, event_data, logger):
         self._cached_info = show_all_data
+        self._cached_events = event_data
         self._logger = logger
 
         self._basic_data = {}
         self._vd_info = []
         self._pd_info = []
         self._cv_info = {}
+        self._event_info = []
 
         self.vd_list = "--- no virtual drives found ---"
         self.pd_list = "--- no physical drives found ---"
         self.cv_list = "--- no Cachevault found ---"
-        self._parse()
+        self._parse_info()
+        self._parse_events()
         self._check()
 
     def __repr__(self):
         return "Controller(%s)" % self._basic_data.get("sasaddress", "unknown")
 
-    def _parse(self):
+    def _event_data(self, text):
+        result = {
+            "time": None,
+            "description": None
+        }
+
+        match = re.search("Time: (.*?)$", text, re.MULTILINE)
+        if match:
+            result["time"] = match.group(1)
+
+        match = re.search("Event Description: (.*?)$", text, re.MULTILINE)
+        if match:
+            result["description"] = match.group(1)
+
+        return result
+
+    def _parse_events(self):
+        if not self._cached_events:
+            return
+
+        parts = re.split("seqNum", self._cached_events)
+        for part in parts[1:]:
+            self._event_info.append(self._event_data(part))
+
+    def _parse_info(self):
         """Parsed the output of the "show all" command into Python types"""
         self._logger.debug("begin parse")
         try:
@@ -324,7 +351,7 @@ class Controller(object):
         """Checks the state and status of the controller and all virtual/physical
         drives.
         """
-        self._logger.debug("begin OK check")
+        self._logger.debug("begin info check")
         result = True
         errors = []
 
@@ -336,7 +363,7 @@ class Controller(object):
             result = False
 
         if not self._vd_info:
-            errors.append("WARNING: No VD info!")
+            errors.append("ERROR: No VD info!")
         else:
             for info in self._vd_info:
                 if str(info["state"]).lower() not in VD_OK_STATES:
@@ -348,7 +375,7 @@ class Controller(object):
                     result = False
 
         if not self._pd_info:
-            errors.append("WARNING: No PD info!")
+            errors.append("ERROR: No PD info!")
         else:
             for info in self._pd_info:
                 if str(info["state"]).lower() not in PD_OK_STATES:
@@ -360,13 +387,17 @@ class Controller(object):
                         PD_OK_STATES))
                     result = False
 
+        if self._event_info:
+            result = False
+            errors += ["%s: %s" % (x["time"], x["description"]) for x in self._event_info]
+
         if result:
             self._logger.debug("...pass")
         else:
             for error in errors:
                 self._logger.debug("...%s", error)
 
-            self._logger.warn("!!!FAIL!!!")
+            self._logger.warn("%s: !!!FAIL!!!", self)
 
         self.result, self.errors = result, errors
 
@@ -377,7 +408,7 @@ class Controller(object):
         """Generates an HTML report of the state of the topology."""
 
         body = """
-        <h1>Controller Status</h1>
+        <h1>Controller Status: %s</h1>
         <pre>
 Status: %s
 Model: %s
@@ -391,6 +422,7 @@ Firmware Package: %s
         <b>CV Info</b>
         <pre>%s</pre>
         """ % (
+            '<font color="red">ERROR</font>' if self.errors else '<font color="green">OK</font>',
             self._basic_data["ctrl_status"], self._basic_data["model"],
             self._basic_data["sasaddress"], self._basic_data["fw_package"],
             self.vd_list,
@@ -399,68 +431,89 @@ Firmware Package: %s
         )
 
         if self.errors:
-            body += "<b>Errors</b><pre>\n%s</pre>" % "\n".join(self.errors)
+            body += "<b>Errors<font color='red'><pre>\n%s</pre></font></b>" % "\n".join(self.errors)
 
         return body
 
 
 class StorCLI(object):
-    def __init__(self, path, logger, working_directory=None, debug_file=None):
+    def __init__(self, path, logger, working_directory=None, _debug_dir=None):
         """This object is used to interact with the LSI storcli utility and parse
         its output.
 
         :param str path: The path of the storcli/storcli64 binary
+        :param logging logger: The logger to use
         :param str working_directory: The working directory to run the storcli
             commands and store the output of the "show all" command.
-        :param logging logger: The logger to use
         """
         super(StorCLI, self).__init__()
         self._path = path
         self._logger = logger
         self._cached_info = {}
+        self._cached_events = {}
         self._parsed = False
         self._working_directory = working_directory or os.getcwd()
         self._count = None
         self._controllers = []
 
-        self._load(debug_file)
+        if _debug_dir:
+            self._load_from_debug_dir(_debug_dir)
+        else:
+            self._load()
 
     def _command(self, command):
         """Execute a generic command on the command line and return the result"""
         command = "%s %s" % (self._path, command)
         return execute(command, cwd=self._working_directory)
 
-    def _load(self, debug_file=None):
+    def _load_from_debug_dir(self, path):
+        prefixes = set([x[:2] for x in os.listdir(path)])
+        for controller_id in prefixes:
+            fh = open(os.path.join(path, "%s-show-all.txt" % controller_id), "rb")
+            self._cached_info[controller_id] = fh.read()
+            fh.close()
+
+            fh = open(os.path.join(path, "%s-events.txt" % controller_id), "rb")
+            self._cached_events[controller_id] = fh.read()
+            fh.close()
+
+            self._controllers.append(Controller(
+                show_all_data=self._cached_info[controller_id],
+                event_data=self._cached_events[controller_id],
+                logger=self._logger))
+
+        self._check()
+
+    def _load(self):
         """Run the "show all" command, store it to a text file, then parse the
         text.
         """
-        if debug_file:
-            fh = open(debug_file, "rb")
-            self._cached_info = fh.read()
+        for controller_id in xrange(self.controller_count()):
+            self._cached_info[controller_id] = self._command("/c%i show all" % controller_id)
+
+            # Store off the info so it gets zipped up for the report
+            temp_file = os.path.join(self._working_directory, "%02i-show-all.txt" % controller_id)
+            fh = open(temp_file, "wb")
+            fh.write(self._cached_info[controller_id])
             fh.close()
-            self._logger.debug("read [%s]", debug_file)
-        else:
-            for controller_id in xrange(self.controller_count()):
-                self._cached_info[controller_id] = self._command("/c%i show all" % controller_id)
+            self._logger.debug("wrote [%s]", temp_file)
 
-                # Store off the info so it gets zipped up for the report
-                temp_file = os.path.join(self._working_directory, "%02i-show-all.txt" % controller_id)
-                fh = open(temp_file, "wb")
-                fh.write(self._cached_info[controller_id])
-                fh.close()
+            self._cached_events[controller_id] = self._command("/c%i show events type=sincereboot filter=warning,critical,fatal" % controller_id)
 
-                self._logger.debug("wrote [%s]", temp_file)
+            # Store off the events so they get zipped up for the report
+            temp_file = os.path.join(self._working_directory, "%02i-events.txt" % controller_id)
+            fh = open(temp_file, "wb")
+            fh.write(self._cached_events[controller_id])
+            fh.close()
+            self._logger.debug("wrote [%s]", temp_file)
 
-        self._parse()
+        for controller_id in self._cached_info.keys():
+            self._controllers.append(Controller(
+                show_all_data=self._cached_info[controller_id],
+                event_data=self._cached_events[controller_id],
+                logger=self._logger))
+
         self._check()
-
-    def _parse(self):
-        """Parsed the output of the "show all" command into Python types"""
-        self._logger.debug("begin parse")
-        for text in self._cached_info.values():
-            self._controllers.append(Controller(text, logger=self._logger))
-
-        self._logger.debug("...ok")
 
     def _check(self):
         """Checks the state and status of the controller and all virtual/physical
@@ -512,15 +565,8 @@ class StorCLI(object):
 
 
 def parse_arguments(parser, logger, args=None):
-    result = True
-
     (options, args) = parser.parse_args(args)
     logger.debug("options: %s; args: %s", options, args)
-
-    if not result:
-        parser.print_help()
-        sys.exit(-1)
-
     return (options, args)
 
 
@@ -548,8 +594,6 @@ def init_parser():
 
 if __name__ == '__main__':
     import tempfile
-
-    # DEBUG_FILE = "/mnt/validation-fs/home/tim/dump.txt"
 
     # Create a temporary directory to store all of our stuff
     working_directory = tempfile.mkdtemp()
@@ -589,7 +633,6 @@ if __name__ == '__main__':
 
         remove_directory(zipdir)
 
-    print working_directory
-    # remove_directory(working_directory)
+    remove_directory(working_directory)
 
     sys.exit(0)

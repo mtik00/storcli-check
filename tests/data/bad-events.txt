@@ -1,0 +1,36 @@
+
+
+seqNum: 0x0000cf1a
+Time: Tue Jun  2 18:02:08 2015
+
+Code: 0x000000fb
+Class: 2
+Locale: 0x01
+Event Description: VD 00/0 is now DEGRADED
+Event Data:
+===========
+Target Id: 0
+
+
+seqNum: 0x0000cf1d
+Time: Tue Jun  2 18:03:11 2015
+
+Code: 0x000000fc
+Class: 3
+Locale: 0x01
+Event Description: VD 00/0 is now OFFLINE
+Event Data:
+===========
+Target Id: 0
+
+
+seqNum: 0x0000cf20
+Time: Tue Jun  2 18:03:35 2015
+
+Code: 0x000000fb
+Class: 2
+Locale: 0x01
+Event Description: VD 00/0 is now DEGRADED
+Event Data:
+===========
+Target Id: 0

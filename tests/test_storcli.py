@@ -33,16 +33,16 @@ class TestMain(unittest.TestCase):
         self.logger.setLevel(logging.CRITICAL)
 
     def test_single(self):
-        single_filename = os.path.join(DATA_DIR, "single-controller.txt")
-        s = storcli_check.StorCLI(None, self.logger, debug_file=single_filename)
+        path = os.path.join(DATA_DIR, "single-controller-ok")
+        s = storcli_check.StorCLI(None, self.logger, _debug_dir=path)
         result, errors = s.ok()
 
         self.assertTrue(result)
         self.assertTrue(len(errors) == 0)
 
     def test_mutliple_offline(self):
-        single_filename = os.path.join(DATA_DIR, "multi-controller-offline.txt")
-        s = storcli_check.StorCLI(None, self.logger, debug_file=single_filename)
+        path = os.path.join(DATA_DIR, "multi-controller-offline")
+        s = storcli_check.StorCLI(None, self.logger, _debug_dir=path)
         result, errors = s.ok()
 
         self.assertFalse(result)
@@ -50,14 +50,14 @@ class TestMain(unittest.TestCase):
         self.assertTrue(len(s._controllers) == 3)
 
     def test_command(self):
-        single_filename = os.path.join(DATA_DIR, "single-controller.txt")
-        s = storcli_check.StorCLI("python", self.logger, debug_file=single_filename)
+        path = os.path.join(DATA_DIR, "single-controller-ok")
+        s = storcli_check.StorCLI("python", self.logger, _debug_dir=path)
         result = s._command('-c "print \'Hello, World!\'"')
         self.assertTrue(result == "Hello, World!")
 
     def test_report_as_html_pass(self):
-        single_filename = os.path.join(DATA_DIR, "single-controller.txt")
-        s = storcli_check.StorCLI("python", self.logger, debug_file=single_filename)
+        path = os.path.join(DATA_DIR, "single-controller-ok")
+        s = storcli_check.StorCLI("python", self.logger, _debug_dir=path)
         subject, body = s.report_as_html()
 
         self.assertTrue("Check Result: PASS" in subject)
@@ -68,8 +68,8 @@ class TestMain(unittest.TestCase):
             self.assertTrue(substring in body)
 
     def test_report_as_html_fail(self):
-        single_filename = os.path.join(DATA_DIR, "single-controller-offline.txt")
-        s = storcli_check.StorCLI("python", self.logger, debug_file=single_filename)
+        path = os.path.join(DATA_DIR, "single-controller-offline")
+        s = storcli_check.StorCLI("python", self.logger, _debug_dir=path)
         subject, body = s.report_as_html()
 
         self.assertTrue("Check Result: FAIL" in subject)

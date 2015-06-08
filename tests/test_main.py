@@ -125,7 +125,7 @@ class TestMain(unittest.TestCase):
             attachments=[filename],
             cc="nobody@example.com,nobody@example.com")
 
-        # Cover the case were cc is empty
+        # Cover the case were cc is empty (branch coverage)
         self.assertRaises(
             Exception, storcli_check.sendmail,
             subject="test", to="nobody@example.com,nobody@example.com",
@@ -138,13 +138,13 @@ class TestMain(unittest.TestCase):
     def test_parse_arumgnents(self):
         parser_ = storcli_check.init_parser()
 
-        self.assertRaises(SystemExit, storcli_check.parse_arguments, parser_, self.logger, [])
+        self.assertRaises(SystemExit, storcli_check.parse_arguments, parser_, self.logger, ["--af346tg"])
 
-        args = ["--to", "test@example.com", "--mailserver", "mailhost.example.com"]
+        args = ["--mailto", "test@example.com", "--mailserver", "mailhost.example.com"]
         (options, args) = storcli_check.parse_arguments(parser_, self.logger, args)
         self.assertTrue(len(args) == 0)
-        self.assertTrue(options.mail_to == "test@example.com")
-        self.assertTrue(options.mail_server == "mailhost.example.com")
+        self.assertTrue(options.mailto == "test@example.com")
+        self.assertTrue(options.mailserver == "mailhost.example.com")
 
 
 if __name__ == '__main__':
