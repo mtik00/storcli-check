@@ -3,7 +3,6 @@ __author__ = "Timothy McFadden"
 __date__ = "06/02/2015"
 __copyright__ = "Timothy McFadden, 2015"
 __license__ = "MIT"
-__version__ = "0.01"
 """
 This is the unit test for storcli-check.py
 """
@@ -17,7 +16,7 @@ import unittest
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 DATA_DIR = os.path.join(THIS_DIR, "data")
 
-sys.path.insert(0, os.path.abspath(os.path.join(THIS_DIR, '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(THIS_DIR, '..', 'src')))
 import storcli_check
 
 

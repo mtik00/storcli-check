@@ -14,7 +14,7 @@ import unittest
 THIS_DIR = os.path.abspath(os.path.dirname(__file__))
 DATA_DIR = os.path.join(THIS_DIR, "data", "multi-controller-fail-events")
 
-sys.path.insert(0, os.path.abspath(os.path.join(THIS_DIR, '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(THIS_DIR, '..', 'src')))
 import storcli_check
 
 
