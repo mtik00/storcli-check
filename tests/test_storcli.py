@@ -61,8 +61,8 @@ class TestMain(unittest.TestCase):
 
         self.assertTrue("Check Result: PASS" in subject)
         for substring in [
-            "<b>PD Status</b>", "24:15    15 Onln", "1/1   RAID10 Optl",
-            "Firmware Package:"
+            "<b>PD Status</b>", "24:15&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;Onln",
+            "1/1&nbsp;&nbsp;&nbsp;RAID10&nbsp;Optl", "Firmware Package:"
         ]:
             self.assertTrue(substring in body)
 

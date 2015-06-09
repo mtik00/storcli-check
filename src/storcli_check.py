@@ -25,7 +25,7 @@ from email import Encoders
 __author__ = "Timothy McFadden"
 __creationDate__ = "06/02/2015"
 __license__ = "MIT"
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 
 # Configuration ################################################################
 CONTROLLER_OK_STATUSES = ["optimal"]
@@ -210,6 +210,20 @@ def execute(command, cwd=None):
 
 
 def sendmail(subject, to, sender, body, mailserver, body_type="html", attachments=None, cc=None):
+    """Send an email message using the specified mail server using Python's
+    standard `smtplib` library and some extras (e.g. attachments).
+
+    NOTE: This function has no authentication.  It was written for a mail server
+    that already does sender/recipient validation.
+
+    WARNING: This is a non-streaming message system.  You should not send large
+    files with this function!
+
+    NOTE: The body should include newline characters such that no line is greater
+    than 990 characters.  Otherwise the email server will insert newlines which
+    may not be appropriate for your content.
+    http://stackoverflow.com/a/18568276
+    """
     msg = MIMEMultipart()
     msg['Subject'] = subject
     msg['From'] = sender
@@ -398,38 +412,70 @@ class Controller(object):
 
         self.result, self.errors = result, errors
 
+    def _vd_list_as_html(self):
+        return self._format_table_html(self.vd_list, VD_INFO_LINE_RE, VD_OK_STATES)
+
+    def _pd_list_as_html(self):
+        return self._format_table_html(self.pd_list, PD_INFO_LINE_RE, PD_OK_STATES)
+
+    def _cv_list_as_html(self):
+        return "<br>" + self._format_table_html(self.cv_list, CACHEVAULT_LINE_RE, CV_OK_STATES)
+
+    def _format_table_html(self, text, info_regex, states):
+        """Reformat the data table based on the info_regex["state"] match.
+
+        All of the tables are in the same basic format (unformatted text).  This
+        function will loop through the lines in text and look for the info_regex
+        match (using re.search).  If a match is found, the "state" is compared
+        to `states`.  If it's not found in *that* list, a red background is
+        applied to the entire line.
+
+        The return from this function will also have all spaces replaced with
+        `&nbsp;` and newlines replaced with "<br>\n".
+        """
+        newlines = []
+        lines = text.split("\n")
+        for line in lines:
+            match = info_regex.search(line)
+            if match and (match.groupdict()["state"].lower() not in states):
+                line = line.replace(" ", "&nbsp;")
+                line = "<span style='background:red;'>" + line + "</span>"
+            else:
+                line = line.replace(" ", "&nbsp;")
+
+            newlines.append(line + "<br>\n")
+
+        return ''.join(newlines)
+
     def ok(self):
         return (self.result, self.errors)
 
     def report_as_html(self):
         """Generates an HTML report of the state of the topology."""
+        # NOTE: Mail servers have a line-length limitation (who knew?).  It's
+        # important to break up the lists in the body with actual newlines.  If
+        # we don't do this, the mail server will kindly do it for us in a
+        # non-appropriate manner.
+        # http://stackoverflow.com/a/18568276
 
         if self.errors:
-            status = '<font color="red">ERROR</font>'
+            status = '<span style="color:red;">ERROR</span>'
         else:
-            status = '<font color="green">OK</font>',
+            status = '<span style="color:green;">OK</span>'
 
         body = """
         <h1>Controller Status: %s</h1>
-        <pre>
-Status: %s
-Model: %s
-SAS Address: %s
-Firmware Package: %s
-        </pre>
-        <b>VD Status</b>
-        <pre>%s</pre>
-        <b>PD Status</b>
-        <pre>%s</pre>
-        <b>CV Info</b>
-        <pre>%s</pre>
+        <p><code>Status: %s<br>Model: %s<br>SAS Address: %s<br>Firmware Package: %s<br></code></p>
+        <p><b>VD Status</b><code>%s</code></p>
+        <p><b>PD Status</b><code>%s</code></p>
+        <p><b>CV Info</b><code>%s</code></p>
         """ % (
             status,
             self._basic_data["ctrl_status"], self._basic_data["model"],
             self._basic_data["sasaddress"], self._basic_data["fw_package"],
-            self.vd_list,
-            self.pd_list,
-            self.cv_list
+            self._vd_list_as_html(),
+            self._pd_list_as_html(),
+            self._cv_list_as_html()
         )
 
         if self.errors:
@@ -439,7 +485,7 @@ Firmware Package: %s
 
 
 class StorCLI(object):
-    def __init__(self, path, logger, working_directory=None, _debug_dir=None):
+    def __init__(self, path, logger=None, working_directory=None, _debug_dir=None):
         """This object is used to interact with the LSI storcli utility and parse
         its output.
 
@@ -450,7 +496,7 @@ class StorCLI(object):
         """
         super(StorCLI, self).__init__()
         self._path = path
-        self._logger = logger
+        self._logger = logger or get_logger()
         self._cached_info = {}
         self._cached_events = {}
         self._parsed = False
@@ -619,6 +665,10 @@ if __name__ == '__main__':
         flush_logfile(logger)
         zip([working_directory, LOGFILE], log_path)
         subject, body = s.report_as_html()
+
+        fh = open("output.html", "wb")
+        fh.write(body)
+        fh.close()
 
         if not (options.mailto and options.mailserver):
             print body

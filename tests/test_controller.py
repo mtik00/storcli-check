@@ -120,8 +120,8 @@ class TestMain(unittest.TestCase):
         report = c.report_as_html()
 
         for substring in [
-            "<b>PD Status</b>", "24:15    15 Onln", "1/1   RAID10 OfLn",
-            "Firmware Package:"
+            "<b>PD Status</b>", "24:15&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;Onln",
+            "1/1&nbsp;&nbsp;&nbsp;RAID10&nbsp;OfLn", "Firmware Package:"
         ]:
             self.assertTrue(substring in report)
 
