@@ -12,7 +12,8 @@ The following command-line parameters are optional:
  - `--mailfrom`: The user the email will seem to come from.  The default is `<username>@<hostname>`.
  - `--mailcc`: Comma-separated list of emails to CC the report to (e.g. `"first1.last1@example.com,first2.other2@example.com"`)
 
- NOTE: If `--mailto` and `--mailserver` are ommited, `--debug-print` is implied.
+ NOTE: If `--mailto` and `--mailserver` are ommited, the HTML report will be
+ printed on stdout according to the use of `--force`.
 
 ## General Information
 The script is a relatively simple parser and reporter for the `storcli /cx show all`
