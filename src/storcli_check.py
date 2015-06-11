@@ -611,6 +611,16 @@ class StorCLI(object):
 
         return (subject, body)
 
+    def dump_all_info(self, prefix="show-all-"):
+        """Dumps the 'show all' command for controllers, enclosures, and
+        physical drives.  This command will attempt to overwrite any file
+        in the current working directory matching
+        "<prefix>(controllers|enclosures|physicaldrives).txt"
+        """
+        self._command("/call show all > %scontrollers.txt" % prefix)
+        self._command("/call/eall show all > %senclosures.txt" % prefix)
+        self._command("/call/eall/sall show all > %sphysicaldrives.txt" % prefix)
+
 
 def parse_arguments(parser, logger, args=None):
     (options, args) = parser.parse_args(args)
@@ -660,6 +670,10 @@ if __name__ == '__main__':
     result, errors = s.ok()
 
     if not result or options.force:
+        # Store off as much info as we can
+        if not result:
+            s.dump_all_info()
+
         zipdir = tempfile.mkdtemp()
         log_path = os.path.abspath(os.path.join(zipdir, "logs.zip"))
         flush_logfile(logger)
