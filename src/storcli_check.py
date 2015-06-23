@@ -25,7 +25,7 @@ from email import Encoders
 __author__ = "Timothy McFadden"
 __creationDate__ = "06/02/2015"
 __license__ = "MIT"
-__version__ = "1.1.0"
+__version__ = "1.2.0"
 
 # Configuration ################################################################
 CONTROLLER_OK_STATUSES = ["optimal"]
