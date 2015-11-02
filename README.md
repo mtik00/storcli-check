@@ -18,7 +18,8 @@ The following command-line parameters are optional:
 ## General Information
 The script is a relatively simple parser and reporter for the `storcli /cx show all`
 command.  It checks to ensure that the controller's status is "optimal", all
-virtual drives are "optimal", and all physical drives are "online".
+virtual drives are "optimal", and all physical drives are "online" or "unconfigured
+good".
 
 ## The Report
 The report that is emailed contains some controller information, the list of
@@ -49,8 +50,9 @@ authentication to `sendmail()`.
  - Any *offline* drive will be an error: In my particular case, all of my PDs
    are part of a volume.  If that's not the case in your configuration, you may
    want to modify which PD states are *OK* in your configuration.
- - The script was tested with storcli64 version 1.15.05.  Other versions may
-   cause issues with the regular expressions.
+ - The script was tested with
+   [storcli64 version 1.15.05](http://docs.avagotech.com/docs/12354804).  Other
+   versions will most likely work, but may cause issues with the regular expressions.
 
 ## Configuration
 
