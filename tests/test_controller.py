@@ -147,6 +147,13 @@ class TestMain(unittest.TestCase):
         self.assertTrue(result)
         self.assertFalse(errors)
 
+    def test_ssd(self):
+        (info, events) = get_data_file_text("single-controller-ssd.txt")
+
+        c = storcli_check.Controller(info, events, self.logger)
+        result, errors = c.ok()
+        self.assertTrue(result)
+        self.assertTrue(len(errors) == 0)
 
 if __name__ == '__main__':
     unittest.main()

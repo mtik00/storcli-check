@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.4
+#!/usr/bin/env python2
 """
 This script is used to check the state of the MR controller on any system
 running Python 2.4.
@@ -53,7 +53,7 @@ VD_INFO_LINE_RE = re.compile("""
     (?P<size>.+?\s[MGT]B)       \s*
 """, re.VERBOSE | re.IGNORECASE)
 PD_INFO_LINE_RE = re.compile("""
-    ^(?P<enclosure>\d+):(?P<slot>\d+)   \s+
+    ^(?P<enclosure>\d+|\s+):(?P<slot>\d+)   \s+
     (?P<devid>\d+)                      \s+
     (?P<state>.+?)                      \s+
     (?P<drive_group>-|\d+?)             \s+
