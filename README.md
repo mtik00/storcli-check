@@ -18,8 +18,8 @@ The following command-line parameters are optional:
 ## General Information
 The script is a relatively simple parser and reporter for the `storcli /cx show all`
 command.  It checks to ensure that the controller's status is "optimal", all
-virtual drives are "optimal", and all physical drives are "online" or "unconfigured
-good".
+virtual drives are "optimal", and all physical drives are "online", "unconfigured
+good", "dedicated hot spare", or "global hot spare".
 
 ## The Report
 The report that is emailed contains some controller information, the list of
