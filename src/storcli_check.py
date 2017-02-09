@@ -35,6 +35,7 @@ PD_OK_STATES = ["onln", "ugood","dhs","ghs"]
 DEFAULT_FROM = "%s@%s" % (getuser(), socket.gethostname())
 LOGFILE = os.path.join(os.sep, "var", "log", "storcli_check.log")
 ################################################################################
+(IS_WIN, IS_LIN) = ("win" in sys.platform, "lin" in sys.platform)
 INFO_RE = re.compile("""
     ^Model\s=\s(?P<model>.*?)$                              .*
     ^Serial\sNumber\s=\s(?P<serial>.*?)$                    .*
@@ -80,7 +81,7 @@ def find_storcli(logger, names=["storcli", "storcli64"]):
     may be running from cron (which has a very different path).
     """
 
-    if "win" in sys.platform:
+    if IS_WIN:
         names = ["%s.exe" % x for x in names]
 
     # Let the user use CWD
@@ -94,6 +95,11 @@ def find_storcli(logger, names=["storcli", "storcli64"]):
         os.path.join(os.sep, "opt", "MegaRAID", "storcli", x)
         for x in names]
 
+    if IS_LIN:
+        default_paths += [
+            os.path.join("/usr/local/bin", x)
+            for x in names]
+
     for path in default_paths:
         if os.path.exists(path):
             logger.debug("found %s", path)
@@ -106,7 +112,7 @@ def find_storcli(logger, names=["storcli", "storcli64"]):
             return result
 
     logger.error("Can't find storcli64")
-    raise Exception
+    raise Exception("Can't find storcli64")
 
 
 def get_logger(name=None, screen_level=logging.INFO,
