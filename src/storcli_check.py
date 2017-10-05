@@ -31,7 +31,7 @@ __version__ = "1.2.0"
 CONTROLLER_OK_STATUSES = ["optimal"]
 CV_OK_STATES = ["optimal"]
 VD_OK_STATES = ["optl"]
-PD_OK_STATES = ["onln", "ugood","dhs","ghs"]
+PD_OK_STATES = ["onln", "ugood", "dhs", "ghs"]
 DEFAULT_FROM = "%s@%s" % (getuser(), socket.gethostname())
 LOGFILE = os.path.join(os.sep, "var", "log", "storcli_check.log")
 ################################################################################
