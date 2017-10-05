@@ -169,6 +169,9 @@ def remove_directory(top, remove_top=True, filter=None):
     if filter is None:
         filter = lambda x: True
 
+    if not (top and os.path.exists(top)):
+        return
+
     for root, dirs, files in os.walk(top, topdown=False):
         for name in [x for x in files if filter(x)]:
             os.remove(os.path.join(root, name))
@@ -242,7 +245,7 @@ def sendmail(subject, to, sender, body, mailserver, body_type="html", attachment
 
     msg.attach(MIMEText(body, body_type))
 
-    attachments = [] or attachments
+    attachments = attachments or []
 
     for attachment in attachments:
         part = MIMEBase('application', "octet-stream")
@@ -653,6 +656,9 @@ def init_parser():
         "--mailcc", dest="mailcc",
         help="comma-separated list of email addresses to CC the report to",
         default="")
+    parser.add_option(
+        "--no-attachments", dest="attachments", action="store_false",
+        help="don't attach the logfile to the email", default=True)
     return parser
 
 
@@ -680,10 +686,14 @@ if __name__ == '__main__':
         if not result:
             s.dump_all_info()
 
-        zipdir = tempfile.mkdtemp()
-        log_path = os.path.abspath(os.path.join(zipdir, "logs.zip"))
-        flush_logfile(logger)
-        zip([working_directory, LOGFILE], log_path)
+        zipped_log_path = None
+        zipdir = None
+        if options.attachments:
+            zipdir = tempfile.mkdtemp()
+            zipped_log_path = os.path.abspath(os.path.join(zipdir, "logs.zip"))
+            flush_logfile(logger)
+            zip([working_directory, LOGFILE], zipped_log_path)
+
         subject, body = s.report_as_html()
 
         fh = open("output.html", "wb")
@@ -699,7 +709,7 @@ if __name__ == '__main__':
                 body=body,
                 sender=options.mailfrom,
                 mailserver=options.mailserver,
-                attachments=[log_path],
+                attachments=[zipped_log_path] if zipped_log_path else None,
                 cc=options.mailcc.split(","))
 
         remove_directory(zipdir)
