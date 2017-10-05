@@ -25,13 +25,13 @@ from email import Encoders
 __author__ = "Timothy McFadden"
 __creationDate__ = "06/02/2015"
 __license__ = "MIT"
-__version__ = "1.2.0"
+__version__ = "1.2.2"
 
 # Configuration ################################################################
 CONTROLLER_OK_STATUSES = ["optimal"]
 CV_OK_STATES = ["optimal"]
 VD_OK_STATES = ["optl"]
-PD_OK_STATES = ["onln", "ugood","dhs","ghs"]
+PD_OK_STATES = ["onln", "ugood", "dhs", "ghs"]
 DEFAULT_FROM = "%s@%s" % (getuser(), socket.gethostname())
 LOGFILE = os.path.join(os.sep, "var", "log", "storcli_check.log")
 ################################################################################
@@ -80,6 +80,7 @@ def find_storcli(logger, names=["storcli", "storcli64"]):
     """Look for the storcli application.  This is a little tricky because we
     may be running from cron (which has a very different path).
     """
+    default_paths = []
 
     if IS_WIN:
         names = ["%s.exe" % x for x in names]
@@ -87,29 +88,33 @@ def find_storcli(logger, names=["storcli", "storcli64"]):
     # Let the user use CWD
     for name in names:
         if os.path.exists(name):
-            logger.debug("found %s", name)
-            return os.path.abspath(os.path.join(".", name))
+            path = os.path.abspath(os.path.join(".", name))
+            logger.debug("found %s at %s", name, path)
+            return path
 
-    # Search the default location of the RPM
-    default_paths = [
+    # Search the $PATH env var
+    # NOTE: This gets around some issues w/ Linux version and the return from
+    # `which`.  Some *nix's (e.g XenServer) returns something like `no storcli`
+    # if it can't find it.  Other *nix's (e.g. Debian) return a null string.
+    # Since `which` searches `$PATH`, we can just do that instead and not
+    # worry about scraping the return of `which`.
+    for path in os.environ['PATH'].split(os.pathsep):
+        default_paths += [os.path.join(path, x) for x in names]
+
+    # Add the default location of the RPM
+    default_paths += [
         os.path.join(os.sep, "opt", "MegaRAID", "storcli", x)
         for x in names]
 
-    if IS_LIN:
-        default_paths += [
-            os.path.join("/usr/local/bin", x)
-            for x in names]
+    # I like to put stuff in /usr/local/bin, which may not be in $PATH depending
+    # on who's running this command.
+    default_paths += [os.path.join("/usr/local/bin", x) for x in names]
 
+    # Finally, search for the executable
     for path in default_paths:
         if os.path.exists(path):
             logger.debug("found %s", path)
             return path
-
-    for name in names:
-        result = execute("which %s" % name)
-        if "no %s" % name not in result:
-            logger.debug("found %s", result)
-            return result
 
     logger.error("Can't find storcli64")
     raise Exception("Can't find storcli64")
@@ -579,6 +584,11 @@ class StorCLI(object):
         self.errors = []
         self.result = True
 
+        if not self._controllers:
+            self.result = False
+            self.errors = ["no controllers found to check!"]
+            return
+
         self._logger.debug("begin OK check")
         for controller in self._controllers:
             result, errors = controller.ok()
@@ -617,6 +627,9 @@ class StorCLI(object):
                 subject = "%s MR Check Result: FAIL" % socket.gethostname()
 
             body += controller.report_as_html()
+
+        if self.errors:
+            body += "<b>Errors<font color='red'><pre>\n%s</pre></font></b>" % "\n".join(self.errors)
 
         return (subject, body)
 

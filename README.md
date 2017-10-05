@@ -60,6 +60,11 @@ If you find that the defaults don't work for you, you should be able to make mod
 in the *Configuration* section of the source.  I don't use any type of config file.
 The section is near the top of the script.
 
+You may also need to play around with where to put `storcli64` so this script
+will find it.  The script tries some obvious places (include `cwd`), and each
+path in `$PATH`.  If you have issues, an easy fix is to put the binary inside
+`/usr/local/bin`, since I always check that.
+
 ## Events
 
 An attempt is made to report possible event problems.  The following command is
