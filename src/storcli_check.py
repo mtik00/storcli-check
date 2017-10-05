@@ -80,6 +80,7 @@ def find_storcli(logger, names=["storcli", "storcli64"]):
     """Look for the storcli application.  This is a little tricky because we
     may be running from cron (which has a very different path).
     """
+    default_paths = []
 
     if IS_WIN:
         names = ["%s.exe" % x for x in names]
@@ -87,29 +88,33 @@ def find_storcli(logger, names=["storcli", "storcli64"]):
     # Let the user use CWD
     for name in names:
         if os.path.exists(name):
-            logger.debug("found %s", name)
-            return os.path.abspath(os.path.join(".", name))
+            path = os.path.abspath(os.path.join(".", name))
+            logger.debug("found %s at %s", name, path)
+            return path
 
-    # Search the default location of the RPM
-    default_paths = [
+    # Search the $PATH env var
+    # NOTE: This gets around some issues w/ Linux version and the return from
+    # `which`.  Some *nix's (e.g XenServer) returns something like `no storcli`
+    # if it can't find it.  Other *nix's (e.g. Debian) return a null string.
+    # Since `which` searches `$PATH`, we can just do that instead and not
+    # worry about scraping the return of `which`.
+    for path in os.environ['PATH'].split(os.pathsep):
+        default_paths += [os.path.join(path, x) for x in names]
+
+    # Add the default location of the RPM
+    default_paths += [
         os.path.join(os.sep, "opt", "MegaRAID", "storcli", x)
         for x in names]
 
-    if IS_LIN:
-        default_paths += [
-            os.path.join("/usr/local/bin", x)
-            for x in names]
+    # I like to put stuff in /usr/local/bin, which may not be in $PATH depending
+    # on who's running this command.
+    default_paths += [os.path.join("/usr/local/bin", x) for x in names]
 
+    # Finally, search for the executable
     for path in default_paths:
         if os.path.exists(path):
             logger.debug("found %s", path)
             return path
-
-    for name in names:
-        result = execute("which %s" % name)
-        if "no %s" % name not in result:
-            logger.debug("found %s", result)
-            return result
 
     logger.error("Can't find storcli64")
     raise Exception("Can't find storcli64")
