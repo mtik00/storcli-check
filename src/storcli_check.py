@@ -242,7 +242,7 @@ def sendmail(subject, to, sender, body, mailserver, body_type="html", attachment
 
     msg.attach(MIMEText(body, body_type))
 
-    attachments = [] or attachments
+    attachments = attachments or []
 
     for attachment in attachments:
         part = MIMEBase('application', "octet-stream")
