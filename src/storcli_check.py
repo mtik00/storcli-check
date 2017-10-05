@@ -584,6 +584,11 @@ class StorCLI(object):
         self.errors = []
         self.result = True
 
+        if not self._controllers:
+            self.result = False
+            self.errors = ["no controllers found to check!"]
+            return
+
         self._logger.debug("begin OK check")
         for controller in self._controllers:
             result, errors = controller.ok()
@@ -622,6 +627,9 @@ class StorCLI(object):
                 subject = "%s MR Check Result: FAIL" % socket.gethostname()
 
             body += controller.report_as_html()
+
+        if self.errors:
+            body += "<b>Errors<font color='red'><pre>\n%s</pre></font></b>" % "\n".join(self.errors)
 
         return (subject, body)
 
