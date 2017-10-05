@@ -169,7 +169,7 @@ def remove_directory(top, remove_top=True, filter=None):
     if filter is None:
         filter = lambda x: True
 
-    if not os.path.exists(top):
+    if not (top and os.path.exists(top)):
         return
 
     for root, dirs, files in os.walk(top, topdown=False):
@@ -687,6 +687,7 @@ if __name__ == '__main__':
             s.dump_all_info()
 
         zipped_log_path = None
+        zipdir = None
         if options.attachments:
             zipdir = tempfile.mkdtemp()
             zipped_log_path = os.path.abspath(os.path.join(zipdir, "logs.zip"))
