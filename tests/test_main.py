@@ -26,15 +26,19 @@ class TestMain(unittest.TestCase):
         self.logger.setLevel(logging.CRITICAL)
 
     def test_find_storcli(self):
-
         if "win" in sys.platform:
             fh = open("storcli.exe", "wb")
             fh.close()
-            self.assertTrue("storcli.exe" in storcli_check.find_storcli(self.logger))
+            fh = open("storcli64.exe", "wb")
+            fh.close()
+
+            self.assertTrue("storcli" in storcli_check.find_storcli(self.logger))
             os.unlink("storcli.exe")
+            os.unlink("storcli64.exe")
+        else:
+            self.assertTrue(storcli_check.find_storcli(self.logger))
 
         self.assertRaises(Exception, storcli_check.find_storcli, self.logger, ["storcli-doesnt-exist"])
-        self.assertTrue(storcli_check.find_storcli(self.logger))
 
     def test_get_logger(self):
         l = storcli_check.get_logger(logfile_path="tmplog.txt", logfile_mode="wb")
@@ -144,6 +148,11 @@ class TestMain(unittest.TestCase):
         self.assertTrue(len(args) == 0)
         self.assertTrue(options.mailto == "test@example.com")
         self.assertTrue(options.mailserver == "mailhost.example.com")
+        self.assertTrue(options.attachments)
+
+        args = ["--no-attachments"]
+        (options, args) = storcli_check.parse_arguments(parser_, self.logger, args)
+        self.assertFalse(options.attachments)
 
 
 if __name__ == '__main__':
