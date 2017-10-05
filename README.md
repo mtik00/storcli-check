@@ -51,7 +51,7 @@ authentication to `sendmail()`.
    are part of a volume.  If that's not the case in your configuration, you may
    want to modify which PD states are *OK* in your configuration.
  - The script was tested with
-   [storcli64 version 1.15.05](http://docs.avagotech.com/docs/12354804).  Other
+   [storcli64 version 1.15.05](https://docs.broadcom.com/docs/12354804).  Other
    versions will most likely work, but may cause issues with the regular expressions.
 
 ## Configuration
