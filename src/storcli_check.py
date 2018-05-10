@@ -25,7 +25,7 @@ from email import Encoders
 __author__ = "Timothy McFadden"
 __creationDate__ = "06/02/2015"
 __license__ = "MIT"
-__version__ = "1.2.2"
+__version__ = "1.3.0"
 
 (IS_WIN, IS_LIN) = ("win" in sys.platform, "lin" in sys.platform)
 # Configuration ################################################################
