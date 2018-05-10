@@ -1,0 +1,1621 @@
+CLI Version = 007.0504.0000.0000 Nov 22, 2017
+Operating system = Linux 3.10.0-514.el7.x86_64
+Controller = 0
+Status = Success
+Description = None
+
+
+Basics :
+======
+Controller = 0
+Adapter Type =   SAS3416(B0)
+Model = HBA 9400-16i
+Serial Number = 500605b080000000
+Current System Date/time = 05/10/2018 09:49:26
+Concurrent commands supported = 7680
+SAS Address =  500605b080000000
+PCI Address = 00:02:00:00
+Mfg Date = 00/00/00
+Rework Date = 00/00/00
+Revision No = N/A
+
+
+Version :
+=======
+Firmware Package Build = 00.00.00.00
+Firmware Version = 07.250.03.00
+Bios Version = 09.13.00.00_07.00.00.00
+NVDATA Version = 08.00.00.15
+Driver Name = mpt3sas
+Driver Version = 26.255.02.00
+
+
+PCI Version :
+===========
+Vendor Id = 0x1000
+Device Id = 0xAC
+SubVendor Id = 0x1000
+SubDevice Id = 0x3000
+Host Interface = PCIE
+Device Interface = SAS-12G
+Bus Number = 2
+Device Number = 0
+Function Number = 0
+
+
+Pending Images in Flash :
+=======================
+Image name = No pending images
+
+
+Status :
+======
+Controller Status = OK
+Memory Correctable Errors = 0
+Memory Uncorrectable Errors = 0
+Bios was not detected during boot = No
+Controller has booted into safe mode = No
+
+
+Supported Adapter Operations :
+============================
+Alarm Control = No
+Cluster Support = No
+Self Diagnostic = No
+Deny SCSI Passthrough = No
+Deny SMP Passthrough = No
+Deny STP Passthrough = No
+Support more than 8 Phys = No
+FW and Event Time in GMT = No
+Support Enclosure Enumeration = Yes
+Support Allowed Operations = Yes
+Support Multipath = Yes
+Support Security = No
+Support Config Page Model = No
+Support the OCE without adding drives = No
+support EKM = No
+Snapshot Enabled = No
+Support PFK = No
+Support PI = No
+Support Shield State = No
+Support Set Link Speed = No
+Support JBOD = No
+Disable Online PFK Change = No
+Real Time Scheduler = No
+Support Reset Now = No
+Support Emulated Drives = No
+
+
+HwCfg :
+=====
+ChipRevision =  B0
+BatteryFRU = N/A
+Front End Port Count = 1
+Backend Port Count = 0
+Serial Debugger = Absent
+NVRAM Size = 0KB
+Flash Size = 16MB
+On Board Memory Size = 0MB
+On Board Expander = Absent
+Temperature Sensor for ROC = Present
+Temperature Sensor for Controller = Absent
+Current Size of CacheCade (GB) = 0
+Current Size of FW Cache (MB) = 0
+ROC temperature(Degree Celcius) = 53
+
+
+Policies :
+========
+
+Policies Table :
+==============
+
+------------------------------------------------
+Policy                          Current Default 
+------------------------------------------------
+Predictive Fail Poll Interval   0 sec           
+Interrupt Throttle Active Count 0               
+Interrupt Throttle Completion   0 us            
+Rebuild Rate                    0 %     30%     
+PR Rate                         0 %     30%     
+BGI Rate                        0 %     30%     
+Check Consistency Rate          0 %     30%     
+Reconstruction Rate             0 %     30%     
+Cache Flush Interval            0s              
+------------------------------------------------
+
+Flush Time(Default) = 4s
+Drive Coercion Mode = none
+Auto Rebuild = Off
+Battery Warning = Off
+ECC Bucket Size = 0
+ECC Bucket Leak Rate (hrs) = 0
+Restore HotSpare on Insertion = Off
+Expose Enclosure Devices = Off
+Maintain PD Fail History = Off
+Reorder Host Requests = On
+Auto detect BackPlane = SGPIO/i2c SEP
+Load Balance Mode = None
+Security Key Assigned = Off
+Disable Online Controller Reset = Off
+Use drive activity for locate = Off
+
+
+Boot :
+====
+Max Drives to Spinup at One Time = 0
+Maximum number of direct attached drives to spin up in 1 min = 0
+Delay Among Spinup Groups (sec) = 0
+Allow Boot with Preserved Cache = On
+
+
+Defaults :
+========
+Phy Polarity = 0
+Phy PolaritySplit = 0
+Cached IO = Off
+Default spin down time (mins) = 0
+Coercion Mode = None
+ZCR Config = Unknown
+Max Chained Enclosures = 0
+Direct PD Mapping = No
+Restore Hot Spare on Insertion = No
+Expose Enclosure Devices = No
+Maintain PD Fail History = No
+Zero Based Enclosure Enumeration = No
+Disable Puncturing = No
+Un-Certified Hard Disk Drives = Block
+SMART Mode = Mode 6
+Enable LED Header = No
+LED Show Drive Activity = No
+Dirty LED Shows Drive Activity = No
+EnableCrashDump = No
+Disable Online Controller Reset = No
+Treat Single span R1E as R10 = No
+Power Saving option = Enable
+TTY Log In Flash = No
+Auto Enhanced Import = No
+Enable Shield State = No
+Time taken to detect CME = 60 sec
+
+
+Capabilities :
+============
+Supported Drives = SAS, SATA, PCIe
+Boot Volume Supported = NO
+Enable JBOD = Yes
+Max Parallel Commands = 7680
+Max SGE Count = 128
+Max Data Transfer Size = 32 sectors
+Max Strips PerIO = 0
+Max Configurable CacheCade Size = 0
+Min Strip Size = 512Bytes
+Max Strip Size = 512Bytes
+
+Scheduled Tasks = NA
+
+Enclosure Information :
+=====================
+
+------------------------------------------------------------------
+EID State Slots PD PS Fans TSs Alms SIM ProdID     VendorSpecific 
+------------------------------------------------------------------
+  0 OK       16 16  0    0   0    0   0 virtualSES                
+------------------------------------------------------------------
+
+
+Physical Device Information :
+===========================
+
+Drive /c0/e0/s12 :
+================
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:12      1 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s12 - Detailed Information :
+=======================================
+
+Drive /c0/e0/s12 State :
+======================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s12 Device attributes :
+==================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W4L67Y
+WWN = 5000c50087388391
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s12 Policies/Settings :
+==================================
+Enclosure position = 0
+Connected Port Number = 1(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000000 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 36 4c 59 37 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s8 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:8       2 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s8 - Detailed Information :
+======================================
+
+Drive /c0/e0/s8 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s8 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W4L87D
+WWN = 5000c5008737340f
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s8 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 2(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000001 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 38 4c 44 37 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s13 :
+================
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:13      3 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s13 - Detailed Information :
+=======================================
+
+Drive /c0/e0/s13 State :
+======================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s13 Device attributes :
+==================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W5ZLWE
+WWN = 5000c50092f67c4f
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s13 Policies/Settings :
+==================================
+Enclosure position = 0
+Connected Port Number = 4(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000002 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 35 57 4c 5a 45 57 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s9 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:9       4 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s9 - Detailed Information :
+======================================
+
+Drive /c0/e0/s9 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s9 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W49TW6
+WWN = 5000c50086c4e213
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s9 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 8(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000003 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 54 39 36 57 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s14 :
+================
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:14      5 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s14 - Detailed Information :
+=======================================
+
+Drive /c0/e0/s14 State :
+======================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s14 Device attributes :
+==================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W4LJYM
+WWN = 5000c500873a6e36
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s14 Policies/Settings :
+==================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000004 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 4a 4c 4d 59 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s10 :
+================
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:10      6 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s10 - Detailed Information :
+=======================================
+
+Drive /c0/e0/s10 State :
+======================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s10 Device attributes :
+==================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W4KJQ7
+WWN = 5000c5008736a332
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s10 Policies/Settings :
+==================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000005 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 4a 4b 37 51 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s15 :
+================
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:15      7 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s15 - Detailed Information :
+=======================================
+
+Drive /c0/e0/s15 State :
+======================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s15 Device attributes :
+==================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W460ML
+WWN = 5000c5007bc09ce1
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s15 Policies/Settings :
+==================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000006 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 30 36 4c 4d 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s4 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:4       8 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s4 - Detailed Information :
+======================================
+
+Drive /c0/e0/s4 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s4 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W4LRCR
+WWN = 5000c500873b2078
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s4 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000008 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 52 4c 52 43 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s11 :
+================
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:11      9 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s11 - Detailed Information :
+=======================================
+
+Drive /c0/e0/s11 State :
+======================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s11 Device attributes :
+==================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W49TVT
+WWN = 5000c50086c4f37d
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s11 Policies/Settings :
+==================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000007 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 54 39 54 56 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s0 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:0      10 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s0 - Detailed Information :
+======================================
+
+Drive /c0/e0/s0 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s0 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W49MXC
+WWN = 5000c50086da5ae4
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s0 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b080000009 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 4d 39 43 58 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s5 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:5      11 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s5 - Detailed Information :
+======================================
+
+Drive /c0/e0/s5 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s5 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W64AMM
+WWN = 5000c500a1c52f93
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s5 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b08000000a 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 36 57 41 34 4d 4d 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s1 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:1      12 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s1 - Detailed Information :
+======================================
+
+Drive /c0/e0/s1 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s1 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W46CHS
+WWN = 5000c5007bc1d445
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s1 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b08000000b 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 43 36 53 48 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s6 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:6      13 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s6 - Detailed Information :
+======================================
+
+Drive /c0/e0/s6 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s6 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W4L9Z7
+WWN = 5000c500873a5159
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s6 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b08000000c 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 39 4c 37 5a 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s2 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:2      14 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s2 - Detailed Information :
+======================================
+
+Drive /c0/e0/s2 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s2 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W4HHVR
+WWN = 5000c500871a16a9
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s2 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b08000000d 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 48 48 52 56 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s7 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:7      15 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s7 - Detailed Information :
+======================================
+
+Drive /c0/e0/s7 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s7 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W64ART
+WWN = 5000c500a1c55d70
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s7 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b08000000e 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 36 57 41 34 54 52 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+Drive /c0/e0/s3 :
+===============
+
+-------------------------------------------------------------------------
+EID:Slt DID State DG       Size Intf Med SED PI SeSz Model            Sp 
+-------------------------------------------------------------------------
+0:3      16 UGood  0 931.512 GB SATA HDD N   N  512B ST1000NM0033-9ZM U  
+-------------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c0/e0/s3 - Detailed Information :
+======================================
+
+Drive /c0/e0/s3 State :
+=====================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c0/e0/s3 Device attributes :
+=================================
+Manufacturer Id = ATA     
+Model Number = ST1000NM0033-9ZM
+NAND Vendor = NA
+SN = Z1W4LJ8T
+WWN = 5000c500873a9c16
+Firmware Revision = SN04
+Raw size = 931.512 GB [0x74706daf Sectors]
+Coerced size = 931.512 GB [0x74706daf Sectors]
+Non Coerced size = 931.512 GB [0x74706daf Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+NCQ setting = N/A
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 1953525167
+
+
+Drive /c0/e0/s3 Policies/Settings :
+=================================
+Enclosure position = 0
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x300605b08000000f 
+-----------------------------------------
+
+
+Inquiry Data = 
+5a 0c ff 3f 37 c8 10 00 00 00 00 00 3f 00 00 00 
+00 00 00 00 20 20 20 20 20 20 20 20 20 20 20 20 
+31 5a 34 57 4a 4c 54 38 00 00 00 00 00 00 4e 53 
+34 30 20 20 20 20 54 53 30 31 30 30 4d 4e 30 30 
+33 33 39 2d 4d 5a 37 31 20 33 20 20 20 20 20 20 
+20 20 20 20 20 20 20 20 20 20 20 20 20 20 10 80 
+00 40 00 2f 00 40 00 02 00 02 07 00 ff 3f 10 00 
+3f 00 10 fc fb 00 10 00 ff ff ff 0f 00 00 07 00 
+
+
+
+
+
+
+

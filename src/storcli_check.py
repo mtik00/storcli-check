@@ -32,6 +32,7 @@ CONTROLLER_OK_STATUSES = ["optimal"]
 CV_OK_STATES = ["optimal"]
 VD_OK_STATES = ["optl"]
 PD_OK_STATES = ["onln", "ugood", "dhs", "ghs"]
+SUPPORTED_DRIVERS = ["megaraid_sas"]
 DEFAULT_FROM = "%s@%s" % (getuser(), socket.gethostname())
 LOGFILE = os.path.join(os.sep, "var", "log", "storcli_check.log")
 ################################################################################
@@ -74,7 +75,10 @@ CACHEVAULT_LINE_RE = re.compile("""
     (?P<mode>.+?)\s+
     (?P<mfg_date>.+?)\s*
 """, re.VERBOSE | re.IGNORECASE)
-
+DRIVER_RE = re.compile("""
+    ^Driver\sName\s=\s(?P<name>.+?)\s*$        .*
+    ^Driver\sVersion\s=\s(?P<version>.+?)\s*$
+""", re.VERBOSE | re.MULTILINE | re.IGNORECASE | re.DOTALL)
 
 def find_storcli(logger, names=["storcli", "storcli64"]):
     """Look for the storcli application.  This is a little tricky because we
@@ -272,6 +276,7 @@ class Controller(object):
         self._logger = logger
 
         self._basic_data = {}
+        self._driver_data = {}
         self._vd_info = []
         self._pd_info = []
         self._cv_info = {}
@@ -316,6 +321,7 @@ class Controller(object):
         self._logger.debug("begin parse")
         try:
             self._basic_data = INFO_RE.search(self._cached_info).groupdict()
+            self._driver_data = DRIVER_RE.search(self._cached_info).groupdict()
 
             vd_count_match = re.search("Virtual Drives = (\d+)", self._cached_info, re.IGNORECASE)
             if vd_count_match:
@@ -376,6 +382,16 @@ class Controller(object):
         """Checks the state and status of the controller and all virtual/physical
         drives.
         """
+        # https://github.com/mtik00/storcli-check/issues/8
+        # Newer versions of storcli include HBAs in its list as well as
+        # MR.  This script isn't designed to check HBAs.  Therefore, if we
+        # *are* an HBA, we don't want to check ourselves.
+        # NOTE: We still want to *see* HBAs.  Otherwise the controller indicies
+        # might get mangled.
+        if not self._driver_data.get("name", '') in SUPPORTED_DRIVERS:
+            self.result, self.errors = True, []
+            return
+
         self._logger.debug("begin info check")
         result = True
         errors = []

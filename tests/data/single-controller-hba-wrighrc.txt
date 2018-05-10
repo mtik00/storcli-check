@@ -1,0 +1,1623 @@
+CLI Version = 007.0409.0000.0000 Nov 06, 2017
+Operating system = Linux3.10.0-693.21.1.el7.x86_64
+Controller = 1
+Status = Success
+Description = None
+
+
+Basics :
+======
+Controller = 1
+Adapter Type =  SAS3008(C0)
+Model = ServeRAID N2226
+Serial Number = 500605b008125f10
+Current System Date/time = 05/10/2018 11:32:49
+Concurrent commands supported = 10240
+SAS Address =  500605b008125f10
+PCI Address = 00:83:00:00
+Mfg Date = 00/00/00
+Rework Date = 00/00/00
+Revision No = N/A
+
+
+Version :
+=======
+Firmware Package Build = 00.00.00.00
+Firmware Version = 15.00.02.00
+Bios Version = 08.35.04.00_17.00.04.00
+NVDATA Version = 14.00.00.11
+Driver Name = mpt3sas
+Driver Version = 24.125.01.00
+
+
+PCI Version :
+===========
+Vendor Id = 0x1000
+Device Id = 0x97
+SubVendor Id = 0x1014
+SubDevice Id = 0x4CD
+Host Interface = PCIE
+Device Interface = SAS-12G
+Bus Number = 131
+Device Number = 0
+Function Number = 0
+
+
+Pending Images in Flash :
+=======================
+Image name = No pending images
+
+
+Status :
+======
+Controller Status = OK
+Memory Correctable Errors = 0
+Memory Uncorrectable Errors = 0
+Bios was not detected during boot = No
+Controller has booted into safe mode = No
+
+
+Supported Adapter Operations :
+============================
+Alarm Control = No
+Cluster Support = No
+Self Diagnostic = No
+Deny SCSI Passthrough = No
+Deny SMP Passthrough = No
+Deny STP Passthrough = No
+Support more than 8 Phys = No
+FW and Event Time in GMT = No
+Support Enclosure Enumeration = Yes
+Support Allowed Operations = Yes
+Support Multipath = Yes
+Support Security = No
+Support Config Page Model = No
+Support the OCE without adding drives = No
+support EKM = No
+Snapshot Enabled = No
+Support PFK = No
+Support PI = No
+Support Shield State = No
+Support Set Link Speed = No
+Support JBOD = No
+Disable Online PFK Change = No
+Real Time Scheduler = No
+Support Reset Now = No
+Support Emulated Drives = No
+
+
+HwCfg :
+=====
+ChipRevision =  C0
+BatteryFRU = N/A
+Front End Port Count = 1
+Backend Port Count = 1
+Serial Debugger = Absent
+NVRAM Size = 0KB
+Flash Size = 0MB
+On Board Memory Size = 0MB
+On Board Expander = Absent
+Temperature Sensor for ROC = Present
+Temperature Sensor for Controller = Absent
+Current Size of CacheCade (GB) = 0
+Current Size of FW Cache (MB) = 0
+ROC temperature(Degree Celcius) = 60
+
+
+Policies :
+========
+
+Policies Table :
+==============
+
+------------------------------------------------
+Policy                          Current Default 
+------------------------------------------------
+Predictive Fail Poll Interval   0 sec           
+Interrupt Throttle Active Count 0               
+Interrupt Throttle Completion   0 us            
+Rebuild Rate                    0 %     30%     
+PR Rate                         0 %     30%     
+BGI Rate                        0 %     30%     
+Check Consistency Rate          0 %     30%     
+Reconstruction Rate             0 %     30%     
+Cache Flush Interval            0s              
+------------------------------------------------
+
+Flush Time(Default) = 4s
+Drive Coercion Mode = none
+Auto Rebuild = Off
+Battery Warning = Off
+ECC Bucket Size = 0
+ECC Bucket Leak Rate (hrs) = 0
+Restore HotSpare on Insertion = Off
+Expose Enclosure Devices = Off
+Maintain PD Fail History = Off
+Reorder Host Requests = On
+Auto detect BackPlane = SGPIO/i2c SEP
+Load Balance Mode = None
+Security Key Assigned = Off
+Disable Online Controller Reset = Off
+Use drive activity for locate = Off
+
+
+Boot :
+====
+Max Drives to Spinup at One Time = 0
+Maximum number of direct attached drives to spin up in 1 min = 0
+Delay Among Spinup Groups (sec) = 0
+Allow Boot with Preserved Cache = On
+
+
+Defaults :
+========
+Phy Polarity = 0
+Phy PolaritySplit = 0
+Cached IO = Off
+Default spin down time (mins) = 0
+Coercion Mode = None
+ZCR Config = Unknown
+Max Chained Enclosures = 0
+Direct PD Mapping = No
+Restore Hot Spare on Insertion = No
+Expose Enclosure Devices = No
+Maintain PD Fail History = No
+Zero Based Enclosure Enumeration = No
+Disable Puncturing = No
+Un-Certified Hard Disk Drives = Block
+SMART Mode = Mode 6
+Enable LED Header = No
+LED Show Drive Activity = No
+Dirty LED Shows Drive Activity = No
+EnableCrashDump = No
+Disable Online Controller Reset = No
+Treat Single span R1E as R10 = No
+Power Saving option = Enable
+TTY Log In Flash = No
+Auto Enhanced Import = No
+Enable Shield State = No
+Time taken to detect CME = 60 sec
+
+
+Capabilities :
+============
+Supported Drives = SAS, SATA
+Boot Volume Supported = NO
+Enable JBOD = Not Allowed
+Max Parallel Commands = 10240
+Max SGE Count = 128
+Max Data Transfer Size = 32 sectors
+Max Strips PerIO = 0
+Max Configurable CacheCade Size = 0
+Min Strip Size = 512Bytes
+Max Strip Size = 512Bytes
+
+Scheduled Tasks = NA
+
+Enclosure Information :
+=====================
+
+------------------------------------------------------------------
+EID State Slots PD PS Fans TSs Alms SIM ProdID  VendorSpecific    
+------------------------------------------------------------------
+  0 OK       60  0  2    4  14    0  12 DCS3700 6.0GWembley60 TrB 
+------------------------------------------------------------------
+
+
+Physical Device Information :
+===========================
+
+Drive /c1/s0 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :0      48 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s0 - Detailed Information :
+===================================
+
+Drive /c1/s0 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s0 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2N2Y30000R550VMVN
+WWN = 5000c50083dac957
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s0 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083dac955 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 4e 32 59 33 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 32 31 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s1 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :1      49 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s1 - Detailed Information :
+===================================
+
+Drive /c1/s1 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s1 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2QDGB0000R552TRP0
+WWN = 5000c50083e97c13
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s1 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e97c11 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 51 44 47 42 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s3 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :3      51 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s3 - Detailed Information :
+===================================
+
+Drive /c1/s3 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s3 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2QCX10000R551RGFV
+WWN = 5000c50083e9a263
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s3 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e9a261 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 51 43 58 31 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s4 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :4      52 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s4 - Detailed Information :
+===================================
+
+Drive /c1/s4 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s4 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2P5FV0000R547T1PZ
+WWN = 5000c50083e51d3f
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s4 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e51d3d 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 50 35 46 56 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s5 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :5      53 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s5 - Detailed Information :
+===================================
+
+Drive /c1/s5 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s5 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2NRAG0000R546L9R5
+WWN = 5000c50083e053cb
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s5 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e053c9 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 4e 52 41 47 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s6 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :6      54 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s6 - Detailed Information :
+===================================
+
+Drive /c1/s6 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s6 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2M6ZR0000R550UWZT
+WWN = 5000c50083e44d43
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s6 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e44d41 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 4d 36 5a 52 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s7 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :7      55 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s7 - Detailed Information :
+===================================
+
+Drive /c1/s7 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s7 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2NR870000R547RL3A
+WWN = 5000c50083e0553f
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s7 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e0553d 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 4e 52 38 37 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s8 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :8      56 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s8 - Detailed Information :
+===================================
+
+Drive /c1/s8 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s8 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2QCLF0000R552TSEF
+WWN = 5000c50083e9aecf
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s8 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e9aecd 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 51 43 4c 46 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s9 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :9      57 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s9 - Detailed Information :
+===================================
+
+Drive /c1/s9 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s9 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2QDA30000R552TSFM
+WWN = 5000c50083e98513
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s9 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e98511 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 51 44 41 33 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s10 :
+=============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :10     58 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s10 - Detailed Information :
+====================================
+
+Drive /c1/s10 State :
+===================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s10 Device attributes :
+===============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2QCWM0000R552RYRP
+WWN = 5000c50083e9a24f
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s10 Policies/Settings :
+===============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e9a24d 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 51 43 57 4d 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+
+Drive /c1/s11 :
+=============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :11     47 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s11 - Detailed Information :
+====================================
+
+Drive /c1/s11 State :
+===================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s11 Device attributes :
+===============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2HQ7A0000R547TV2J
+WWN = 5000c50083e4d287
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s11 Policies/Settings :
+===============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e4d285 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 48 51 37 41 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s2 :
+============
+
+-----------------------------------------------------------------------
+EID:Slt DID State DG     Size Intf Med SED PI SeSz Model            Sp 
+-----------------------------------------------------------------------
+ :2      50 UGood  0 5.458 TB SAS  HDD N   N  512B ST6000NM0034   X U  
+-----------------------------------------------------------------------
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+Drive /c1/s2 - Detailed Information :
+===================================
+
+Drive /c1/s2 State :
+==================
+Shield Counter = 0
+Media Error Count = 0
+Other Error Count = 0
+Predictive Failure Count = 0
+S.M.A.R.T alert flagged by drive = No
+
+
+Drive /c1/s2 Device attributes :
+==============================
+Manufacturer Id = IBM-ESXS
+Model Number = ST6000NM0034   X
+NAND Vendor = NA
+SN = Z4D2KBPZ0000R547TSVV
+WWN = 5000c50083e28703
+Firmware Revision = BC6G
+Raw size = 5.458 TB [0x2baa0f4af Sectors]
+Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Non Coerced size = 5.458 TB [0x2baa0f4af Sectors]
+Device Speed = Unknown
+Link Speed = 6.0Gb/s
+Sector Size = 512B
+Config ID = NA
+Number of Blocks = 11721045167
+
+
+Drive /c1/s2 Policies/Settings :
+==============================
+Enclosure position = 1
+Connected Port Number = 0(path0) 
+Sequence Number = 0
+Commissioned Spare = No
+Emergency Spare = No
+Last Predictive Failure Event Sequence Number = 0
+Successful diagnostics completion on = N/A
+SED Capable = No
+SED Enabled = No
+Secured = No
+Needs EKM Attention = No
+PI Eligible = No
+Certified = Yes
+Wide Port Capable = No
+
+Port Information :
+================
+
+-----------------------------------------
+Port Status Linkspeed SAS address        
+-----------------------------------------
+   0 Active 6.0Gb/s   0x5000c50083e28701 
+-----------------------------------------
+
+
+Inquiry Data = 
+00 00 06 32 9f 01 10 02 49 42 4d 2d 45 53 58 53 
+53 54 36 30 30 30 4e 4d 30 30 33 34 20 20 20 58 
+42 43 36 47 5a 34 44 32 4b 42 50 5a 31 30 32 36 
+42 43 37 30 20 20 20 20 00 00 00 a2 0c 60 20 e0 
+04 60 04 c0 00 00 00 00 00 00 00 00 00 00 00 00 
+00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 
+00 02 31 30 30 30 31 35 32 33 34 00 30 30 30 31 
+32 32 30 30 4e 41 35 37 32 20 20 20 20 20 4e 33 
+
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+EID-Enclosure Device ID|Slt-Slot No.|DID-Device ID|DG-DriveGroup
+DHS-Dedicated Hot Spare|UGood-Unconfigured Good|GHS-Global Hotspare
+UBad-Unconfigured Bad|Onln-Online|Offln-Offline|Intf-Interface
+Med-Media Type|SED-Self Encryptive Drive|PI-Protection Info
+SeSz-Sector Size|Sp-Spun|U-Up|D-Down/PowerSave|T-Transition|F-Foreign
+UGUnsp-Unsupported|UGShld-UnConfigured shielded|HSPShld-Hotspare shielded
+CFShld-Configured shielded|Cpybck-CopyBack|CBShld-Copyback Shielded
+
+
+
+
