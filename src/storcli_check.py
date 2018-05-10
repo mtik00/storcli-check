@@ -647,9 +647,6 @@ class StorCLI(object):
 
             body += controller.report_as_html()
 
-        if self.errors:
-            body += "<b>Errors<font color='red'><pre>\n%s</pre></font></b>" % "\n".join(self.errors)
-
         return (subject, body)
 
     def dump_all_info(self, prefix="show-all-"):
