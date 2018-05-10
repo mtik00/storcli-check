@@ -11,9 +11,18 @@ The following command-line parameters are optional:
  - `--force`: Force the script to send the report even if everything's fine (useful for *weekly status*)
  - `--mailfrom`: The user the email will seem to come from.  The default is `<username>@<hostname>`.
  - `--mailcc`: Comma-separated list of emails to CC the report to (e.g. `"first1.last1@example.com,first2.other2@example.com"`)
+ - `--ignore`: Comma-separated list of controller IDs to ignore (e.g. `1,2`)
 
  NOTE: If `--mailto` and `--mailserver` are ommited, the HTML report will be
  printed on stdout according to the use of `--force`.
+
+## HBA vs MR controllers
+Newer versions of `storcli` show both `HBA` and `MR` controllers.  The script
+attempts to ignore all `HBA` controllers reported by `storcli`.  This is done
+by scraping the name of the driver being used by the controller.
+
+See `SUPPORTED_DRIVERS` in the configuration setting of the script if you need
+to change it.
 
 ## General Information
 The script is a relatively simple parser and reporter for the `storcli /cx show all`

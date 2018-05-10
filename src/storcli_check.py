@@ -518,7 +518,10 @@ class Controller(object):
 
 
 class StorCLI(object):
-    def __init__(self, path, logger=None, working_directory=None, _debug_dir=None):
+    def __init__(
+        self, path, logger=None, working_directory=None, _debug_dir=None,
+        ignored_ids=None
+    ):
         """This object is used to interact with the LSI storcli utility and parse
         its output.
 
@@ -526,6 +529,8 @@ class StorCLI(object):
         :param logging logger: The logger to use
         :param str working_directory: The working directory to run the storcli
             commands and store the output of the "show all" command.
+        :param list(str) ignored_ids: Any controller ID you want to ignore.
+            E.g.: [1, 2]
         """
         super(StorCLI, self).__init__()
         self._path = path
@@ -536,6 +541,7 @@ class StorCLI(object):
         self._working_directory = working_directory or os.getcwd()
         self._count = None
         self._controllers = []
+        self._ignored_ids = map(int, ignored_ids) if ignored_ids else []
 
         if _debug_dir:
             self._load_from_debug_dir(_debug_dir)
@@ -550,6 +556,9 @@ class StorCLI(object):
     def _load_from_debug_dir(self, path):
         prefixes = set([x[:2] for x in os.listdir(path)])
         for controller_id in prefixes:
+            if int(controller_id, 10) in self._ignored_ids:
+                continue
+
             fh = open(os.path.join(path, "%s-show-all.txt" % controller_id), "rb")
             self._cached_info[controller_id] = fh.read()
             fh.close()
@@ -570,6 +579,9 @@ class StorCLI(object):
         text.
         """
         for controller_id in xrange(self.controller_count()):
+            if controller_id in self._ignored_ids:
+                continue
+
             self._cached_info[controller_id] = self._command("/c%i show all" % controller_id)
 
             # Store off the info so it gets zipped up for the report
@@ -688,6 +700,11 @@ def init_parser():
     parser.add_option(
         "--no-attachments", dest="attachments", action="store_false",
         help="don't attach the logfile to the email", default=True)
+    parser.add_option(
+        "--ignore", dest="ignore",
+        help="comma-separated listed of controller indicies to ignore",
+        default=""
+    )
     return parser
 
 
@@ -703,11 +720,14 @@ if __name__ == '__main__':
     parser = init_parser()
     (options, args) = parse_arguments(parser, logger)
 
+    ignored_ids = options.ignore.split(",") if options.ignore else None
+
     storcli_path = find_storcli(logger)
     s = StorCLI(
         path=storcli_path,
         working_directory=working_directory,
-        logger=logger)
+        logger=logger,
+        ignored_ids=ignored_ids)
     result, errors = s.ok()
 
     if not result or options.force:
