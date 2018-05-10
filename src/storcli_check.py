@@ -27,16 +27,16 @@ __creationDate__ = "06/02/2015"
 __license__ = "MIT"
 __version__ = "1.2.2"
 
+(IS_WIN, IS_LIN) = ("win" in sys.platform, "lin" in sys.platform)
 # Configuration ################################################################
 CONTROLLER_OK_STATUSES = ["optimal"]
 CV_OK_STATES = ["optimal"]
 VD_OK_STATES = ["optl"]
 PD_OK_STATES = ["onln", "ugood", "dhs", "ghs"]
-SUPPORTED_DRIVERS = ["megaraid_sas"]
+SUPPORTED_DRIVERS = ["megaraid_sas", "megasas35.sys"]
 DEFAULT_FROM = "%s@%s" % (getuser(), socket.gethostname())
-LOGFILE = os.path.join(os.sep, "var", "log", "storcli_check.log")
+LOGFILE = os.path.join(os.sep, "var", "log", "storcli_check.log") if IS_LIN else "storcli_check.log"
 ################################################################################
-(IS_WIN, IS_LIN) = ("win" in sys.platform, "lin" in sys.platform)
 INFO_RE = re.compile("""
     ^Model\s=\s(?P<model>.*?)$                              .*
     ^Serial\sNumber\s=\s(?P<serial>.*?)$                    .*
@@ -223,6 +223,9 @@ def zip(items, destination):
 def execute(command, cwd=None):
     p = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.STDOUT, shell=True, cwd=cwd)
     out, _ = p.communicate()
+
+    if IS_WIN:
+        out = out.replace('\r\n', '\n')
 
     return out.strip()
 
