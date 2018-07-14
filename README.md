@@ -1,3 +1,5 @@
+*NOTE: As of 13-JUL-2018, I no longer have access to MR controllers;  This repo should be considered deprecated*
+
 # storcli-check
 `storcli_check.py` is a Python 2.4-compatible script that will check your
 MegaRAID adapter for issues and send a report by email.  It's designed to be
