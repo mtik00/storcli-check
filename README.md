@@ -1,4 +1,6 @@
 *NOTE: As of 13-JUL-2018, I no longer have access to MR controllers;  This repo should be considered deprecated*
+ 
+ **Please  consider one of the forks of this project.**
 
 # storcli-check
 `storcli_check.py` is a Python 2.4-compatible script that will check your
